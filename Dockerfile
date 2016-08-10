@@ -1,9 +1,11 @@
 #Prometheus Config Store Dockerfile
+
 FROM alpine
-MAINTAINER Ed Marshall (ed.marshall@infinityworks.com)
 
-RUN mkdir -p /etc/prom-conf/
+MAINTAINER Virgil Chereches (virgil.chereches@gmx.net)
 
-ADD prometheus.yml /etc/prom-conf/prometheus.yml
+RUN mkdir -p /etc/prometheus
+
+ADD prometheus.yml /etc/prometheus/prometheus.yml
 
 CMD ["/bin/sh"]
