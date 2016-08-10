@@ -28,5 +28,5 @@ scrape_configs:
 
 - job_name: 'rancher'
   file_sd_configs:
-    - names: [ '/prom-rancher-sd-data/*.json' ]
+    - files: [ '/prom-rancher-sd-data/*.json' ]
       refresh_interval: 30s
