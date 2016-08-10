@@ -8,4 +8,6 @@ RUN mkdir -p /etc/prometheus
 
 ADD prometheus.yml /etc/prometheus/prometheus.yml
 
+VOLUME /etc/prometheus
+
 CMD ["/bin/sh"]
