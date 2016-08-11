@@ -4,6 +4,7 @@ global:
   external_labels:                                                              
       monitor: 'exporter-metrics'                                                
                                                                                 
+scrape_configs:
 - job_name: 'ContainerMetrics'
   dns_sd_configs:
   - names:
@@ -19,5 +20,10 @@ global:
 
 - job_name: 'rancher'
   file_sd_configs:
-    - files: [ '/prom-rancher-sd-data/*.json' ]
+    - files: [ '/prom-rancher-sd-data/rancher.json' ]
+      refresh_interval: 30s
+
+- job_name: 'NodeMetrics'
+  file_sd_configs:
+    - files: [ '/prom-rancher-sd-data/node_exporter.json' ]
       refresh_interval: 30s
