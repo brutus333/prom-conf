@@ -26,7 +26,7 @@ scrape_configs:
   - source_labels: ['metrics_path']
     regex:         '(.*)'
     target_label:  '__metrics_path__'
-    replacement:   '$1
+    replacement:   '$1'
 
 - job_name: 'NodeMetrics'
   file_sd_configs:
